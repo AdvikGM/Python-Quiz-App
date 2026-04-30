@@ -20,4 +20,4 @@ A simple beginner-friendly Python quiz game built using basic Python concepts.
 4. Run the app:
 
 ```bash
-python main.py
+PythonQuiz.py
