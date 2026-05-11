@@ -14,27 +14,35 @@ options = [
 
 answers = ["b", "a", "b", "b"]
 
-score = 0
+while True:
 
-print("🎮 Welcome to Python Quiz Game!\n")
+    score = 0
 
-for i in range(len(questions)):
-    print("Q" + str(i + 1) + ":", questions[i])
-    print(options[i])
+    print("\n🎮 Welcome to Python Quiz Game!\n")
 
-    answer = input("Your answer (a/b/c): ").lower().strip()
+    for i in range(len(questions)):
+        print("Q" + str(i + 1) + ":", questions[i])
+        print(options[i])
 
-    if answer == answers[i]:
-        print("✅ Correct!\n")
-        score += 1
+        answer = input("Your answer (a/b/c): ").lower().strip()
+
+        if answer == answers[i]:
+            print("✅ Correct!\n")
+            score += 1
+        else:
+            print("❌ Wrong!\n")
+
+    print("🏁 Final Score:", score, "/", len(questions))
+
+    if score == len(questions):
+        print("🔥 Perfect score!")
+    elif score >= len(questions) / 2:
+        print("👍 Good job!")
     else:
-        print("❌ Wrong!\n")
+        print("📚 Keep practicing!")
 
-print("🏁 Final Score:", score, "/", len(questions))
+    again = input("\nDo you want to play again? (y/n): ").lower().strip()
 
-if score == len(questions):
-    print("🔥 Perfect score!")
-elif score >= len(questions) / 2:
-    print("👍 Good job!")
-else:
-    print("📚 Keep practicing!")
+    if again == "n":
+        print("👋 Thanks for playing!")
+        break
